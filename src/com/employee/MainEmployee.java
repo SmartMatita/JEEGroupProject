@@ -17,35 +17,17 @@ public class MainServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 	public static final String VIEW = "/WEB-INF/restricted/main.jsp";
        
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public MainServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		//find the associtated user from databse
-		//display the details for the user
+
 		
-		//TODO get the client in request params, when done implementing this in isLoggedIn filter
-		//request.getAttribute("authuser") 
-		User user = User.getUserByClient_id(12345678);
-		request.setAttribute("user", user);
-		
-		this.getServletContext().getRequestDispatcher(VIEW).forward(request, response);
-	
+		Employee employee = Employee.getClientByAccount_id(account_id);
+		request.setAttribute("employee", employee);
 		
 	}
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
+
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);

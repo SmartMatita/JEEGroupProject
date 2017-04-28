@@ -9,7 +9,7 @@
         <title>Se connecter</title>
    	</head>
    	<body>
-   		 <form method="post" action="">
+   		 <form method="post" action="/JEEGroupProject/User">
             <fieldset>
                 <legend>Connexion</legend>
                 <p>Vous pouvez vous connecter via ce formulaire.</p>

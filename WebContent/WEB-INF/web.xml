@@ -9,8 +9,8 @@
     <servlet-class>com.jeegroupproject.servlets.MainServlet</servlet-class>
   </servlet>
   <servlet>
-  	<servlet-name>LogOutServlet</servlet-name>
-  	<servlet-class>com.jeegroupproject.servlets.LogOutServlet</servlet-class>
+    <servlet-name>LogOutServlet</servlet-name>
+    <servlet-class>com.jeegroupproject.servlets.LogOutServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>LoginPageServlet</servlet-name>
@@ -21,8 +21,8 @@
     <url-pattern>/restricted/main</url-pattern>
   </servlet-mapping>
   <servlet-mapping>
-  	<servlet-name>LogOutServlet</servlet-name>
-  	<url-pattern>/logout</url-pattern>
+    <servlet-name>LogOutServlet</servlet-name>
+    <url-pattern>/logout</url-pattern>
   </servlet-mapping>
   <filter>
     <filter-name>IsLoggedIn</filter-name>
