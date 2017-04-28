@@ -1,5 +1,6 @@
 package com.employee;
-
+import java.util.HashMap;
+import java.util.Collection;
 import java.sql.Date;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -155,16 +156,22 @@ public class Employee {
 		
 		return employee;	
 	}
-
-	//TODO : getauthenticateduserbytoken similar to getauthenticated user
-	//TODO : methode updatetokenforUser
-		//generate a token called each time getauthenticateduser is called (see getauthenticated user)
-		//SQL query to update the field in DB
+  /// To create a new bank account
+		private HashMap<String, Account> comptesMap = new HashMap<String, Account>();
+		
 	
-	//TODO : Create a non-static method to save a client to database 
-	
-	
-	
-
-
-}
+		
+		public Account creerAccount(String nom, String prenom){
+			long numeroAccount = (long)(Math.random() * Math.pow(10, 12));
+			byte clef = (byte)(Math.random() * 100);
+			Account compte = new Account(nom, prenom, numeroAccount, clef, 0);
+			comptesMap.put(compte.makeIBAN(), compte);
+			return compte;
+		}
+		
+		public Collection<Account> collectionAccounts(){
+			return comptesMap.values();
+		}
+		
+		
+	}
